@@ -1,0 +1,388 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+<title>Fresher Jobs — straight from the company</title>
+<meta name="description" content="Entry-level and internship openings in India, taken from each company's own hiring system. No agents, no fees, no forwarded messages.">
+<meta name="theme-color" content="#0B1020">
+<meta property="og:type" content="website">
+<meta property="og:title" content="Fresher Jobs — straight from the company">
+<meta property="og:description" content="Entry-level and internship openings in India, taken from each company's own hiring system.">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='8' fill='%232563EB'/%3E%3Cpath d='M9 13h14v11H9z' fill='none' stroke='%23fff' stroke-width='2.2'/%3E%3Cpath d='M13 13v-2.5h6V13' fill='none' stroke='%23fff' stroke-width='2.2'/%3E%3C/svg%3E">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@600;700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --bg:#0B1020; --bg-2:#121A2E; --bg-3:#1A2440;
+    --line:rgba(255,255,255,.11);
+    --fg:#EAF0FA; --fg-2:#C3CEE0; --muted:#8C9BB4;
+    --accent:#5B9DFF; --accent-2:#3B82F6; --on-accent:#08122A;
+    --good:#34D399; --warn:#FBBF24;
+    --tap:44px;
+  }
+  @media(prefers-color-scheme:light){
+    :root{
+      --bg:#F6F8FC; --bg-2:#FFFFFF; --bg-3:#EDF2FA;
+      --line:rgba(15,23,42,.13);
+      --fg:#0F172A; --fg-2:#334155; --muted:#5B6676;
+      --accent:#1D4ED8; --accent-2:#1E40AF; --on-accent:#FFFFFF;
+      --good:#047857; --warn:#B45309;
+    }
+  }
+  *{margin:0;padding:0;box-sizing:border-box}
+  [hidden]{display:none!important}
+  body{background:var(--bg);color:var(--fg);
+    font-family:Inter,system-ui,-apple-system,sans-serif;font-size:15px;line-height:1.5;
+    -webkit-font-smoothing:antialiased}
+  a{color:inherit;text-decoration:none}
+  .wrap{max-width:940px;margin:0 auto;
+    padding-left:max(16px,env(safe-area-inset-left));
+    padding-right:max(16px,env(safe-area-inset-right))}
+
+  /* ── Masthead ── */
+  header{position:relative;overflow:hidden;background:var(--bg-2);
+    border-bottom:1px solid var(--line);padding:22px 0 26px}
+  header::before{content:"";position:absolute;top:0;right:0;bottom:0;left:0;pointer-events:none;
+    background:radial-gradient(52% 120% at 88% -10%,color-mix(in srgb,var(--accent) 15%,transparent),transparent 66%)}
+  header .wrap{position:relative}
+  .hbar{display:flex;align-items:center;gap:10px;margin-bottom:16px}
+  .mark{width:32px;height:32px;border-radius:9px;flex:none;display:grid;place-items:center;
+    background:linear-gradient(135deg,var(--accent),var(--accent-2));color:#fff}
+  .mark svg{width:17px;height:17px}
+  .wordmark{font-size:12px;font-weight:700;letter-spacing:.14em;text-transform:uppercase;
+    color:var(--muted)}
+  h1{font-family:'Space Grotesk',Inter,sans-serif;font-size:clamp(26px,6vw,40px);
+    font-weight:700;line-height:1.08;letter-spacing:-.022em;max-width:20ch}
+  .sub{color:var(--fg-2);font-size:clamp(14.5px,3.2vw,16.5px);margin-top:10px;max-width:56ch}
+  .stats{margin-top:14px;display:flex;gap:9px;flex-wrap:wrap;align-items:center;
+    font-size:13px;color:var(--muted)}
+  .stats b{color:var(--fg);font-weight:700;font-variant-numeric:tabular-nums}
+  .stats i{width:3px;height:3px;border-radius:50%;background:var(--line);
+    display:inline-block;font-style:normal}
+  @media(min-width:900px){
+    .hrow{display:flex;align-items:flex-end;gap:44px}
+    .hhead{flex:1 1 auto;min-width:0}
+    .stats{flex:0 0 auto;margin-top:0;flex-direction:column;align-items:flex-start;gap:11px;
+      padding:2px 0 2px 26px;border-left:1px solid var(--line)}
+    .stats i{display:none}
+    .stats span{display:flex;align-items:baseline;gap:7px;white-space:nowrap}
+    .stats b{font-family:'Space Grotesk',Inter,sans-serif;font-size:22px;line-height:1}
+  }
+
+  /* ── Search ── */
+  .tools{position:sticky;top:0;z-index:20;background:var(--bg);
+    border-bottom:1px solid var(--line);padding:11px 0}
+  .sfield{position:relative;display:flex;align-items:center}
+  .sfield>svg{position:absolute;left:13px;width:16px;height:16px;color:var(--muted);
+    pointer-events:none}
+  .sfield input{width:100%;font:inherit;font-size:16px;color:var(--fg);min-height:var(--tap);
+    background:var(--bg-2);border:1px solid var(--line);border-radius:10px;
+    padding:10px 44px 10px 40px}
+  .sfield input:focus{outline:none;border-color:var(--accent)}
+  .sfield input::-webkit-search-cancel-button{display:none}
+  .qx{position:absolute;right:0;width:var(--tap);height:var(--tap);display:grid;place-items:center;
+    background:none;border:0;cursor:pointer;color:var(--muted)}
+  .qx svg{width:16px;height:16px}
+  .chips{display:flex;gap:6px;overflow-x:auto;margin-top:10px;padding-bottom:2px;
+    scrollbar-width:none;-webkit-overflow-scrolling:touch}
+  .chips::-webkit-scrollbar{display:none}
+  .chip{flex:none;display:inline-flex;align-items:center;gap:6px;min-height:38px;padding:0 13px;
+    border-radius:999px;white-space:nowrap;cursor:pointer;font:inherit;font-size:12.5px;
+    font-weight:600;color:var(--fg-2);background:var(--bg-2);border:1px solid var(--line);
+    -webkit-tap-highlight-color:transparent}
+  .chip.on{color:var(--on-accent);background:var(--accent);border-color:var(--accent)}
+  .chip .n{font-size:11px;font-weight:700;opacity:.72}
+  @media(max-width:700px){ .chip{min-height:var(--tap)} }
+
+  /* ── The list ── */
+  main{padding:18px 0 40px}
+  .rows{display:flex;flex-direction:column;background:var(--bg-2);
+    border:1px solid var(--line);border-radius:12px;overflow:hidden}
+  .row{display:flex;align-items:center;gap:12px;padding:12px 14px;min-height:64px;
+    border-top:1px solid var(--line);transition:background .14s}
+  .row:first-child{border-top:0}
+  .row:hover{background:var(--bg-3)}
+  .who{flex:1;min-width:0}
+  .title{font-size:15px;font-weight:600;line-height:1.35;overflow-wrap:anywhere}
+  .meta{margin-top:3px;font-size:12.5px;color:var(--muted);
+    display:flex;flex-wrap:wrap;align-items:center;gap:7px}
+  .co{color:var(--fg-2);font-weight:600}
+  .meta i{width:3px;height:3px;border-radius:50%;background:var(--line);
+    display:inline-block;font-style:normal;flex:none}
+  .apply{flex:none;display:inline-flex;align-items:center;gap:6px;min-height:38px;padding:0 14px;
+    border-radius:9px;font-size:13px;font-weight:650;
+    color:var(--on-accent);background:var(--accent);
+    -webkit-tap-highlight-color:transparent}
+  .apply:hover{background:var(--accent-2)}
+  .apply svg{width:13px;height:13px}
+  @media(max-width:560px){
+    .row{flex-wrap:wrap;gap:9px}
+    .who{flex:1 1 100%}
+    .apply{width:100%;justify-content:center;min-height:var(--tap)}
+  }
+
+  .empty{padding:30px 18px;text-align:center;color:var(--muted);font-size:14.5px;
+    border:1px dashed var(--line);border-radius:12px;line-height:1.6}
+  .empty b{color:var(--fg-2)}
+
+  /* ── How this list is made ── */
+  .how{margin-top:22px;padding:16px 18px;border-radius:12px;
+    background:var(--bg-2);border:1px solid var(--line)}
+  .how h2{font-family:'Space Grotesk',Inter,sans-serif;font-size:15px;font-weight:700;
+    margin-bottom:9px}
+  .how ul{list-style:none;display:flex;flex-direction:column;gap:8px}
+  .how li{display:flex;gap:9px;font-size:13.5px;color:var(--fg-2);line-height:1.55}
+  .how svg{width:15px;height:15px;flex:none;margin-top:3px;color:var(--good)}
+  .how .no svg{color:var(--warn)}
+
+  footer{border-top:1px solid var(--line);background:var(--bg-2);
+    padding:22px 0 calc(24px + env(safe-area-inset-bottom));
+    font-size:12.5px;color:var(--muted)}
+  .fbar{display:flex;gap:10px;flex-wrap:wrap;align-items:center}
+  .credit{margin-left:auto}
+  footer b{color:var(--fg-2);font-weight:600}
+  footer a{border-bottom:1px solid var(--line)}
+  footer a:hover{color:var(--accent);border-color:var(--accent)}
+</style>
+</head>
+<body>
+
+<header>
+  <div class="wrap">
+    <div class="hbar">
+      <div class="mark">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2">
+          <rect x="3" y="7" width="18" height="13" rx="2"/><path d="M8 7V5h8v2"/>
+        </svg>
+      </div>
+      <span class="wordmark">Fresher Jobs · India</span>
+    </div>
+    <div class="hrow">
+      <div class="hhead">
+        <h1>Openings taken straight from the company</h1>
+        <p class="sub">Entry-level roles and internships, read from each employer's own
+          hiring system. Every link goes to the company. Nobody here will ever ask
+          you for a fee.</p>
+      </div>
+      <p class="stats" id="stats"></p>
+    </div>
+  </div>
+</header>
+
+<div class="tools">
+  <div class="wrap">
+    <div class="sfield">
+      <svg viewBox="0 0 24 24" fill="currentColor"><path d="M10 3a7 7 0 105.3 11.6l4 4 1.4-1.4-4-4A7 7 0 0010 3zm0 2a5 5 0 110 10 5 5 0 010-10z"/></svg>
+      <input id="q" type="search" placeholder="Search a role, company or city…"
+             autocomplete="off" autocapitalize="off" autocorrect="off" spellcheck="false"
+             enterkeyhint="search" aria-label="Search openings">
+      <button class="qx" id="qx" hidden type="button" aria-label="Clear">
+        <svg viewBox="0 0 24 24" fill="currentColor"><path d="M19 6.4 17.6 5 12 10.6 6.4 5 5 6.4 10.6 12 5 17.6 6.4 19 12 13.4 17.6 19 19 17.6 13.4 12z"/></svg>
+      </button>
+    </div>
+    <div class="chips" id="chips"></div>
+  </div>
+</div>
+
+<main>
+  <div class="wrap">
+    <div id="list"></div>
+
+    <section class="how">
+      <h2>How this list is put together</h2>
+      <ul>
+        <li>
+          <svg viewBox="0 0 24 24" fill="currentColor"><path d="M9 16.2 4.8 12l-1.4 1.4L9 19 21 7l-1.4-1.4z"/></svg>
+          <span>Every opening is read from the company's own hiring system, and
+            <b>Apply</b> takes you there. Nothing is retyped or forwarded.</span>
+        </li>
+        <li>
+          <svg viewBox="0 0 24 24" fill="currentColor"><path d="M9 16.2 4.8 12l-1.4 1.4L9 19 21 7l-1.4-1.4z"/></svg>
+          <span>Only roles whose title says they are for someone starting out —
+            intern, trainee, graduate, entry level.</span>
+        </li>
+        <li class="no">
+          <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2 1 21h22L12 2zm1 14h-2v2h2v-2zm0-6h-2v4h2v-4z"/></svg>
+          <span>A real employer never asks a candidate for a registration fee, a
+            training fee, a security deposit or your bank details. If anyone does,
+            it is not a job.</span>
+        </li>
+      </ul>
+    </section>
+  </div>
+</main>
+
+<footer>
+  <div class="wrap">
+    <div class="fbar">
+      <span id="upd"></span>
+      <span><a href="https://github.com/hedaprateek/fresher-jobs" target="_blank" rel="noopener">Source and company list</a></span>
+      <span class="credit"><b>Stunity Tech</b> · by Prateek</span>
+    </div>
+  </div>
+</footer>
+
+<script>
+(function () {
+  "use strict";
+  var $ = function (id) { return document.getElementById(id); };
+  var data = { jobs: [] }, company = "", built = [];
+
+  function el(tag, cls, text) {
+    var e = document.createElement(tag);
+    if (cls) e.className = cls;
+    if (text != null) e.textContent = text;
+    return e;
+  }
+
+  /* The one rule the whole page rests on, checked again here. The file is
+     built by a script that already refuses anything else, but this page is
+     what a stranger trusts, so it does not take that on faith. */
+  var TRUSTED = /^https:\/\/((boards|job-boards)(\.eu)?\.greenhouse\.io|jobs\.ashbyhq\.com|jobs(\.eu)?\.lever\.co)\//;
+  function safe(j) {
+    if (TRUSTED.test(j.url)) return true;
+    if (!j.site) return false;
+    var m = /^https:\/\/([^/]+)\//.exec(j.url);
+    if (!m) return false;
+    var host = m[1].toLowerCase().replace(/^www\./, "");
+    var site = String(j.site).toLowerCase().replace(/^www\./, "");
+    return host === site || host.endsWith("." + site);
+  }
+
+  function ago(d) {
+    if (!d) return "";
+    var days = Math.round((Date.now() - new Date(d + "T00:00:00Z")) / 86400000);
+    if (isNaN(days)) return "";
+    if (days <= 0) return "today";
+    if (days === 1) return "yesterday";
+    if (days < 30) return days + " days ago";
+    if (days < 60) return "last month";
+    return Math.round(days / 30) + " months ago";
+  }
+
+  function row(j) {
+    var r = el("div", "row");
+    var who = el("div", "who");
+    who.appendChild(el("div", "title", j.title));
+    var meta = el("div", "meta");
+    meta.appendChild(el("span", "co", j.company));
+    if (j.place) { meta.appendChild(el("i")); meta.appendChild(el("span", null, j.place)); }
+    var when = ago(j.posted);
+    if (when) { meta.appendChild(el("i")); meta.appendChild(el("span", null, when)); }
+    who.appendChild(meta);
+    r.appendChild(who);
+
+    var a = document.createElement("a");
+    a.className = "apply";
+    a.href = j.url;
+    a.target = "_blank";
+    a.rel = "noopener noreferrer";
+    a.appendChild(el("span", null, "Apply"));
+    a.insertAdjacentHTML("beforeend",
+      '<svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">' +
+      '<path d="M14 3v2h3.6l-9.3 9.3 1.4 1.4L19 6.4V10h2V3h-7zM5 5h5V3H3v18h18v-7h-2v5H5V5z"/></svg>');
+    a.setAttribute("aria-label", "Apply for " + j.title + " at " + j.company);
+    r.appendChild(a);
+    return r;
+  }
+
+  function build() {
+    var list = $("list");
+    list.textContent = "";
+    built = [];
+
+    if (!data.jobs.length) {
+      var e = el("div", "empty");
+      e.innerHTML = "<b>Nothing open right now.</b><br>" +
+        "Every company on the list was checked and none has a fresher role posted " +
+        "today. This page is rebuilt every morning — try again tomorrow.";
+      list.appendChild(e);
+      return;
+    }
+
+    var box = el("div", "rows");
+    data.jobs.forEach(function (j) {
+      var c = row(j);
+      box.appendChild(c);
+      built.push({ el: c, company: j.company,
+        hay: [j.title, j.company, j.place].join(" ").toLowerCase() });
+    });
+    list.appendChild(box);
+
+    var none = el("div", "empty", "Nothing matches that.");
+    none.id = "none";
+    none.hidden = true;
+    list.appendChild(none);
+
+    var counts = {};
+    data.jobs.forEach(function (j) { counts[j.company] = (counts[j.company] || 0) + 1; });
+    var chips = $("chips");
+    chips.textContent = "";
+    var names = Object.keys(counts).sort();
+    if (names.length > 1) {
+      [{ k: "", label: "All", n: data.jobs.length }]
+        .concat(names.map(function (n) { return { k: n, label: n, n: counts[n] }; }))
+        .forEach(function (c) {
+          var b = el("button", "chip" + (c.k === company ? " on" : ""));
+          b.type = "button";
+          b.appendChild(el("span", null, c.label));
+          b.appendChild(el("span", "n", String(c.n)));
+          b.addEventListener("click", function () { company = c.k; build(); filter(); });
+          chips.appendChild(b);
+        });
+    }
+  }
+
+  function filter() {
+    var term = $("q").value.trim().toLowerCase();
+    $("qx").hidden = !term;
+    var shown = 0;
+    built.forEach(function (b) {
+      var hit = term ? b.hay.indexOf(term) !== -1 : (!company || b.company === company);
+      b.el.hidden = !hit;
+      if (hit) shown++;
+    });
+    var none = $("none");
+    if (none) none.hidden = shown !== 0 || !built.length;
+  }
+
+  function stats() {
+    var box = $("stats");
+    box.textContent = "";
+    var bits = [[String(data.jobs.length), data.jobs.length === 1 ? "opening" : "openings"]];
+    var firms = {};
+    data.jobs.forEach(function (j) { firms[j.company] = 1; });
+    if (data.jobs.length) bits.push([String(Object.keys(firms).length), "companies hiring"]);
+    if (data.checked) bits.push([String(data.checked), "boards checked"]);
+    bits.forEach(function (b, i) {
+      if (i) box.appendChild(el("i"));
+      var s = el("span");
+      s.appendChild(el("b", null, b[0]));
+      s.appendChild(document.createTextNode(" " + b[1]));
+      box.appendChild(s);
+    });
+  }
+
+  $("q").addEventListener("input", filter);
+  $("qx").addEventListener("click", function () { $("q").value = ""; filter(); $("q").focus(); });
+
+  fetch("jobs.json", { cache: "no-cache" })
+    .then(function (r) { if (!r.ok) throw new Error(r.status); return r.json(); })
+    .then(function (j) {
+      // Anything that is not plainly the employer's own link never renders.
+      j.jobs = (j.jobs || []).filter(safe);
+      data = j;
+      $("upd").textContent = j.updated ? "Checked " + j.updated : "";
+      stats(); build(); filter();
+    })
+    .catch(function () {
+      $("list").innerHTML =
+        '<div class="empty"><b>Could not load the list.</b><br>' +
+        'Please try again in a little while.</div>';
+    });
+})();
+</script>
+</body>
+</html>

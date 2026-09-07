@@ -1,0 +1,49 @@
+# Rebuilds jobs.json from the employers in sources.json.
+#
+# Runs here rather than anywhere else for a dull reason: the machine this was
+# written on sits behind a TLS-intercepting proxy that Node refuses, so it
+# cannot reach the job boards at all. A runner can.
+name: Refresh openings
+
+on:
+  workflow_dispatch:
+  schedule:
+    # Every morning, a little after 6am India time.
+    - cron: '40 0 * * *'
+  push:
+    branches: [main]
+    paths:
+      - 'sources.json'
+      - 'scripts/fetch-jobs.js'
+      - '.github/workflows/refresh.yml'
+
+permissions:
+  contents: write
+
+# A scheduled run and a push must not both rewrite jobs.json at once.
+concurrency:
+  group: refresh
+  cancel-in-progress: false
+
+jobs:
+  refresh:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Read every board
+        run: node scripts/fetch-jobs.js
+
+      - name: Nothing but the employers' own links may ship
+        run: node scripts/check-jobs.js
+
+      - name: Commit only if something changed
+        run: |
+          if git diff --quiet -- jobs.json; then
+            echo "no change"; exit 0
+          fi
+          git config user.name  "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add jobs.json
+          git commit -m "Openings as of $(date -u +%Y-%m-%d)"
+          git push
