@@ -1,9 +1,17 @@
 {
- "updated": "2026-10-01",
+ "updated": "2026-10-02",
  "checked": 23,
- "scanned": 4576,
- "inIndia": 400,
+ "scanned": 4548,
+ "inIndia": 403,
  "jobs": [
+  {
+   "title": "Software Development Engineer Intern",
+   "place": "Onsite in Bangalore",
+   "url": "https://job-boards.greenhouse.io/hackerrank/jobs/8229735",
+   "posted": "2026-10-01",
+   "company": "HackerRank",
+   "site": ""
+  },
   {
    "title": "Growth Marketing Intern",
    "place": "Bengaluru, India",
