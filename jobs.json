@@ -1,9 +1,17 @@
 {
- "updated": "2026-10-23",
+ "updated": "2026-10-24",
  "checked": 23,
- "scanned": 4642,
- "inIndia": 394,
+ "scanned": 4615,
+ "inIndia": 378,
  "jobs": [
+  {
+   "title": "Marketing internship (brand & communication)",
+   "place": "Bengaluru, India",
+   "url": "https://jobs.ashbyhq.com/sarvam/bba82f34-1544-421e-a393-3edd8a5f4cb2/application",
+   "posted": "2026-10-23",
+   "company": "Sarvam AI",
+   "site": ""
+  },
   {
    "title": "Software Development Engineer Intern",
    "place": "Onsite in Bangalore",
