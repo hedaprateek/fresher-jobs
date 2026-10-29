@@ -1,9 +1,25 @@
 {
- "updated": "2026-10-28",
+ "updated": "2026-10-29",
  "checked": 23,
- "scanned": 4628,
- "inIndia": 385,
+ "scanned": 4643,
+ "inIndia": 391,
  "jobs": [
+  {
+   "title": "AI Researcher Intern",
+   "place": "Onsite in Bangalore",
+   "url": "https://job-boards.greenhouse.io/hackerrank/jobs/8281055",
+   "posted": "2026-10-28",
+   "company": "HackerRank",
+   "site": ""
+  },
+  {
+   "title": "Software Engineer, New Grad",
+   "place": "Bangalore",
+   "url": "https://stripe.com/jobs/search?gh_jid=8130876",
+   "posted": "2026-10-28",
+   "company": "Stripe",
+   "site": "stripe.com"
+  },
   {
    "title": "Marketing internship (brand & communication)",
    "place": "Bengaluru, India",
