@@ -1,8 +1,8 @@
 {
- "updated": "2026-11-13",
+ "updated": "2026-11-14",
  "checked": 23,
- "scanned": 4843,
- "inIndia": 405,
+ "scanned": 4836,
+ "inIndia": 402,
  "jobs": [
   {
    "title": "AI Researcher Intern",
@@ -11,14 +11,6 @@
    "posted": "2026-10-28",
    "company": "HackerRank",
    "site": ""
-  },
-  {
-   "title": "Software Engineer, New Grad",
-   "place": "Bangalore",
-   "url": "https://stripe.com/jobs/search?gh_jid=8130876",
-   "posted": "2026-10-28",
-   "company": "Stripe",
-   "site": "stripe.com"
   },
   {
    "title": "Marketing internship (brand & communication)",
