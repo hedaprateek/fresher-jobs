@@ -1,8 +1,8 @@
 {
- "updated": "2026-11-25",
+ "updated": "2026-11-26",
  "checked": 22,
- "scanned": 4789,
- "inIndia": 362,
+ "scanned": 4776,
+ "inIndia": 352,
  "jobs": [
   {
    "title": "Product User Research, Intern",
@@ -21,14 +21,6 @@
    "site": ""
   },
   {
-   "title": "Software Engineer, New Grad",
-   "place": "Bangalore",
-   "url": "https://stripe.com/jobs/search?gh_jid=8130876",
-   "posted": "2026-10-28",
-   "company": "Stripe",
-   "site": "stripe.com"
-  },
-  {
    "title": "Marketing internship (brand & communication)",
    "place": "Bengaluru, India",
    "url": "https://jobs.ashbyhq.com/sarvam/bba82f34-1544-421e-a393-3edd8a5f4cb2/application",
@@ -43,14 +35,6 @@
    "posted": "2026-10-01",
    "company": "HackerRank",
    "site": ""
-  },
-  {
-   "title": "Software Engineer, Intern",
-   "place": "Bengaluru",
-   "url": "https://stripe.com/jobs/search?gh_jid=8031833",
-   "posted": "2026-07-10",
-   "company": "Stripe",
-   "site": "stripe.com"
   }
  ]
 }
